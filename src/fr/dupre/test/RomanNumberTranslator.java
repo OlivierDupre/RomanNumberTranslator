@@ -1,7 +1,6 @@
 package fr.dupre.test;
 
 /**
- *
  * @author petitscoeurs
  */
 public class RomanNumberTranslator {
