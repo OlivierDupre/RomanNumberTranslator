@@ -38,6 +38,11 @@ public class RomanTranslatorTest {
     }
 
     @Test
+    public void convert4() {
+        assertEquals(romanTranslator.convert(4), "IV");
+    }
+
+    @Test
     public void convert5() {
         assertEquals(romanTranslator.convert(5), "V");
     }

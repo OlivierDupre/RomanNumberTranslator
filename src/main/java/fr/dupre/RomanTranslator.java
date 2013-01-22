@@ -1,10 +1,8 @@
 package fr.dupre;
 
-import java.util.Collection;
-import java.util.Comparator;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Set;
-import java.util.SortedSet;
 import java.util.TreeSet;
 
 /**
@@ -12,10 +10,10 @@ import java.util.TreeSet;
  */
 public class RomanTranslator {
 
-    private enum RomanNumbers {
+    private enum RomanNumbers implements Comparable<RomanNumbers> {
 
-        I("I", 1), V("V", 5), X("X", 10), L("L", 50), C("C", 100), D("D", 500),
-        M("M", 1000);
+        M("M", 1000), D("D", 500), C("C", 100), L("L", 50),
+        X("X", 10), V("V", 5), I("I", 1);
         private final String romanDigit;
         private final int arabicValue;
 
@@ -31,29 +29,15 @@ public class RomanTranslator {
         public int getArabicValue() {
             return arabicValue;
         }
-
-        public static Set<Integer> arabicValues() {
-            Set<Integer> arabicValues = new TreeSet();
-
-            for (RomanNumbers romanNumber : values()) {
-                arabicValues.add(romanNumber.getArabicValue());
-            }
-
-            return arabicValues;
-        }
     }
 
     public String convert(int arabicNumber) {
-        TreeSet<Integer> romanNumberArabicValues = (TreeSet<Integer>) RomanNumbers.arabicValues();
-
-        for (Iterator<Integer> romanNumberIterator = romanNumberArabicValues.descendingIterator(); romanNumberIterator.hasNext();) {
-            int arabicValue = romanNumberIterator.next();
-        }
-
-        if (arabicNumber >= RomanNumbers.X.getArabicValue()) {
-            return convert(arabicNumber, RomanNumbers.X);
-        } else if (arabicNumber >= RomanNumbers.V.getArabicValue()) {
-            return convert(arabicNumber, RomanNumbers.V);
+        Set<RomanNumbers> romanNumbersValues = new TreeSet(Arrays.asList(RomanNumbers.values()));
+        
+        for(RomanNumbers romanNumber : romanNumbersValues){
+            if (arabicNumber >= romanNumber.getArabicValue()) {
+                return convert(arabicNumber, romanNumber);
+            }
         }
 
         return convert(arabicNumber, RomanNumbers.I);
