@@ -38,21 +38,6 @@ public class RomanTranslatorTest {
     }
 
     @Test
-    public void convert4() {
-        assertEquals(romanTranslator.convert(4), "IV");
-    }
-
-    @Test
-    public void convert5() {
-        assertEquals(romanTranslator.convert(5), "V");
-    }
-
-    @Test
-    public void convert6() {
-        assertEquals(romanTranslator.convert(6), "VI");
-    }
-
-    @Test
     public void convert10() {
         assertEquals(romanTranslator.convert(10), "X");
     }
@@ -61,28 +46,44 @@ public class RomanTranslatorTest {
     public void convert20() {
         assertEquals(romanTranslator.convert(20), "XX");
     }
-    
+
+    @Test
+    public void convert5() {
+        assertEquals(romanTranslator.convert(5), "V");
+    }
 
     @Test
     public void convert50() {
         assertEquals(romanTranslator.convert(50), "L");
     }
-    
 
     @Test
     public void convert100() {
         assertEquals(romanTranslator.convert(100), "C");
     }
-    
 
     @Test
     public void convert500() {
         assertEquals(romanTranslator.convert(500), "D");
     }
-    
 
     @Test
     public void convert1000() {
         assertEquals(romanTranslator.convert(1000), "M");
+    }
+
+    @Test
+    public void convert6() {
+        assertEquals(romanTranslator.convert(6), "VI");
+    }
+
+    @Test
+    public void convert4() {
+        assertEquals(romanTranslator.convert(4), "IV");
+    }
+
+    @Test
+    public void convert3999() {
+        assertEquals(romanTranslator.convert(3999), "MMMCMXCIX");
     }
 }
