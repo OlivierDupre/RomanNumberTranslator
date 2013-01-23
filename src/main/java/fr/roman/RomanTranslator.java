@@ -12,7 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package fr.dupre;
+package fr.roman;
 
 import java.util.Arrays;
 import java.util.Set;
@@ -49,6 +49,12 @@ public class RomanTranslator {
         }
     }
 
+    /**
+     * Converts the given arabic number in roman number.
+     * 
+     * @param arabicNumber the arabic number to translate in roman.
+     * @return the roman number, result of the translation.
+     */
     public String convert(int arabicNumber) {
         Set<RomanNumbers> romanNumbersValues = new TreeSet(Arrays.asList(RomanNumbers.values()));
 

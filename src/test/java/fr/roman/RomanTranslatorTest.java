@@ -12,7 +12,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package fr.dupre;
+package fr.roman;
 
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterMethod;
@@ -99,5 +99,15 @@ public class RomanTranslatorTest {
     @Test
     public void convert3999() {
         assertEquals(romanTranslator.convert(3999), "MMMCMXCIX");
+    }
+
+    @Test
+    public void convert984() {
+        assertEquals(romanTranslator.convert(984), "CMLXXXIV");
+    }
+
+    @Test
+    public void convert2996() {
+        assertEquals(romanTranslator.convert(2996), "MMCMXCVI");
     }
 }
